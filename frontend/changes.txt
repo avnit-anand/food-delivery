@@ -1,0 +1,4 @@
+- Use react component for cart total --> completed
+- show no of item in basket icon
+- footer will always stick to bottom
+-navbar stick to top always
