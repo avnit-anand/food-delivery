@@ -10,7 +10,7 @@ const Add = ({url}) => {
   const [data, setData] = useState({
     name: '',
     description: '',
-    category: 'Salad',
+    category: 'Deserts',
     price: '',
   });
 
@@ -35,8 +35,8 @@ const Add = ({url}) => {
     if (response.data.success) {
       setData({
         name: '',
-        description: '',
-        category: 'Salad',
+        description:'',
+        category: 'Rolls',
         price: '',
       }),
         setImage(false);
@@ -54,7 +54,7 @@ const Add = ({url}) => {
           <label htmlFor="image">
             <img src={image ? URL.createObjectURL(image) : assets.upload_area} alt="" />
           </label>
-          <input onChange={(e) => setImage(e.target.files[0])} type="file" id='image' hidden required />
+          <input onChange={(e) => setImage(e.target.files[0])} type="file" id='image' hidden required/>
         </div>
 
         <div className="add-product-name flex-col">

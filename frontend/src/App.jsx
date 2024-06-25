@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 
 const App = () => {
+  // use to show and hide the login/register popup
   const [showLogin, setShowLogin] = useState(false);
 
   return (
