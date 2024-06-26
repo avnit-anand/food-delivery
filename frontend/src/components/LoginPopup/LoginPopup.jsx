@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState  } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
@@ -11,7 +11,7 @@ const LoginPopup = ({ setShowLogin }) => {
     email: '',
     password: ''
   })
-  const { backendUrl, setToken} = useContext(StoreContext);
+  const { backendUrl, setToken } = useContext(StoreContext);
 
   const onChangeHandler = (event) => {
     const name = event.target.name;
@@ -21,15 +21,14 @@ const LoginPopup = ({ setShowLogin }) => {
 
   const onLogin = async (event) => {
     event.preventDefault();
-    let url = backendUrl;
+    let newUrl = backendUrl;
     if (currState === "Login") {
-      url = url + "/api/user/login"
+      newUrl = newUrl + "/api/user/login"
     } else {
-      url = url + "/api/user/register"
+      newUrl = newUrl + "/api/user/register"
     }
 
-    const response = await axios.post(url, data);
-    console.log(response)
+    const response = await axios.post(newUrl, data);
     if (response.data.success) {
       setToken(response.data.token);
       localStorage.setItem("token", response.data.token);
